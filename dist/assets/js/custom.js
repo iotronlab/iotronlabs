@@ -1,12 +1,3 @@
-import _ from 'lodash';
-import './style.scss';
-import {MDCRipple} from '@material/ripple/index';
-import {MDCTextField} from '@material/textfield';
-import {MDCFloatingLabel} from '@material/floating-label';
-import {MDCLineRipple} from '@material/line-ripple';
-
-
-
 (function ($) {
 	
 	"use strict";
@@ -168,11 +159,3 @@ import {MDCLineRipple} from '@material/line-ripple';
 
 
 })(window.jQuery);
-
-const ripple = [].map.call(document.querySelectorAll('.features-small-item'), function(el) {
-  return new MDCRipple(el);
-});
-
-const buttonRipple = [].map.call(document.querySelectorAll('.mdc-button'), function(el) {
-  return new MDCRipple(el);
-});
