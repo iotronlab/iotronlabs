@@ -5,8 +5,10 @@ welcome
 */
 
 .welcome-area {
+    height: 620px;
     overflow: hidden;
     position: relative;
+    background-image: linear-gradient(135deg, $gradientDark 0%, $gradientLight 100%);
     -webkit-transform-style: preserve-3d;
     -moz-transform-style: preserve-3d;
     transform-style: preserve-3d;
@@ -22,140 +24,173 @@ welcome
 
     .right-bg {
         float: right;
-        width: 80%;
+        width: 50%;
+        height: 100%;
         overflow: hidden;
         position: relative;
         z-index: 1;
-        background-image: linear-gradient(135deg, $gradientDark 0%, $gradientLight 100%);
+        
         -webkit-transform-style: preserve-3d;
         -moz-transform-style: preserve-3d;
         transform-style: preserve-3d;
 
-        
+
         .illus-block {
-           margin: auto;
-  width: 50%;
-           
+            width: 430px;
             height: 500px;
-            margin-top: 40px;
-           margin-bottom: 80px;
-        }
-    }
-
-
-    .header-bg {
-        position: absolute;
-        top: 0px;
-        min-height: 500px;
-        z-index: 2;
-    }
-
-    .header-text {
-        position: absolute;
-        width: 100%;
-        top: 23%;
-        transform: perspective(1px) translateY(0%);
-        z-index: 7;
-
-        h1 {
-            @include font($normal, 28px);
-            color: #1E3056;
-            line-height: 46px;
-            letter-spacing: 0.93px;
-            margin-bottom: 30px;
-
-            span {
-                color: $primaryColor;
-            }
-        }
-
-        p {
-            @include font($normal, 16px);
-            color: $textLight;
-            line-height: 28px;
-            letter-spacing: 1px;
-            margin-bottom: 40px;
-            padding-bottom: 30px;
-            position: relative;
-
-            &:before {
-                content: '';
-                position: absolute;
-                bottom: 0px;
-                left: 0px;
-                width: 19px;
-                height: 2px;
-                background: $primaryColor;
-                @include radius(1px);
-            }
-
-            &:after {
-                content: '';
-                position: absolute;
-                bottom: 0px;
-                left: 20px;
-                width: 9px;
-                height: 2px;
-                background: $primaryColor;
-                @include radius(1px);
-            }
-        }
-
-        .btn-primary-line {
-            width: 170px;
-            margin-bottom: 0px;
+                margin-left: 120px;
+    margin-top: 100px;
+    margin-bottom: 20px;
             
+           
+            .carousel-fade {
+                .carousel-inner {
+                    .item {
+                        transition-property: opacity;
+                    }
+
+                    .item,
+                    .active.left,
+                    .active.right {
+                        opacity: 0;
+                    }
+
+                    .active,
+                    .next.left,
+                    .prev.right {
+                        opacity: 1;
+                    }
+
+                    .next,
+                    .prev,
+                    .active.left,
+                    .active.right {
+                        left: 0;
+                        transform: translate3d(0, 0, 0);
+                    }
+                }
+
+            }
+        }
+
+
+    }
+}
+
+
+.header-bg {
+    position: absolute;
+    top: 0px;
+    min-height: 500px;
+    z-index: 2;
+}
+
+.header-text {
+    position: absolute;
+    width: 100%;
+    top: 23%;
+    transform: perspective(1px) translateY(0%);
+    z-index: 7;
+
+    h1 {
+        @include font($normal, 28px);
+        color: #1E3056;
+        line-height: 46px;
+        letter-spacing: 0.93px;
+        margin-bottom: 30px;
+
+        span {
+            color: $primaryColor;
         }
     }
 
-    .play-button-wrapper {
-        position: absolute;
-        width: 100%;
-        top: 45%;
-        transform: perspective(1px) translateY(-45%);
-        z-index: 7;
-        width: 55.5%;
-        right: 0px;
+    p {
+        @include font($normal, 16px);
+        color: $textLight;
+        line-height: 28px;
+        letter-spacing: 1px;
+        margin-bottom: 30px;
+        padding-bottom: 30px;
+        position: relative;
 
-        .btn-play {
-            width: 60px;
-            height: 60px;
-            line-height: 60px;
-            text-align: center;
-            font-size: 22px;
-            color: #fff;
-            margin: auto;
-            left: 10%;
-            right: 0px;
-            display: block;
-            border: 1px solid #fff;
-            @include radius(100px);
+        &:before {
+            content: '';
             position: absolute;
-            overflow: hidden;
-            top: 50%;
-            transform: perspective(1px) translateY(-50%);
-            z-index: 6;
+            bottom: 0px;
+            left: 0px;
+            width: 19px;
+            height: 2px;
+            background: $primaryColor;
+            @include radius(1px);
+        }
 
-            &:before {
-                content: '';
-                position: absolute;
-                width: 100%;
-                height: 100%;
-                left: 0px;
-                top: 0px;
-                background: #fff;
-                opacity: .19;
-                z-index: 1;
-            }
+        &:after {
+            content: '';
+            position: absolute;
+            bottom: 0px;
+            left: 20px;
+            width: 9px;
+            height: 2px;
+            background: $primaryColor;
+            @include radius(1px);
+        }
+    }
 
-            i {
-                padding-left: 5px;
-                position: relative;
-                z-index: 2;
-            }
+    .btn-primary-line {
+        width: 170px;
+        margin-bottom: 0px;
+
+    }
+}
+
+.play-button-wrapper {
+    position: absolute;
+    width: 100%;
+    top: 45%;
+    transform: perspective(1px) translateY(-45%);
+    z-index: 7;
+    width: 55.5%;
+    right: 0px;
+
+    .btn-play {
+        width: 60px;
+        height: 60px;
+        line-height: 60px;
+        text-align: center;
+        font-size: 22px;
+        color: #fff;
+        margin: auto;
+        left: 10%;
+        right: 0px;
+        display: block;
+        border: 1px solid #fff;
+        @include radius(100px);
+        position: absolute;
+        overflow: hidden;
+        top: 50%;
+        transform: perspective(1px) translateY(-50%);
+        z-index: 6;
+
+        &:before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            left: 0px;
+            top: 0px;
+            background: #fff;
+            opacity: .19;
+            z-index: 1;
+        }
+
+        i {
+            padding-left: 5px;
+            position: relative;
+            z-index: 2;
         }
     }
 }
+
 
 @media (max-width : 1200px) {
     .header-text {
@@ -194,8 +229,16 @@ welcome
                 position: absolute;
                 width: 100%;
                 height: 100%;
-                opacity: 0.5;
+               
                 background-image: linear-gradient(135deg, $gradientDark 0%, $gradientLight 100%);
+            }
+
+            .illus-block {
+                margin: auto;
+                width: 50%;
+                float: none;
+                margin-top: 20px;
+                margin-bottom: 10px;
             }
         }
 
@@ -233,7 +276,7 @@ welcome
             .btn-primary-line {
                 margin: auto;
                 border: 1px solid #fff !important;
-                background: #fff !important;
+
                 color: $primaryColor;
                 height: 40px;
                 line-height: 40px;
@@ -255,13 +298,16 @@ welcome
     0% {
         transform: translateX(0) translateZ(0) scaleY(1)
     }
+
     50% {
         transform: translateX(-25%) translateZ(0) scaleY(0.55)
     }
+
     100% {
         transform: translateX(-50%) translateZ(0) scaleY(1)
     }
 }
+
 .waveWrapper {
     overflow: hidden;
     position: absolute;
@@ -270,27 +316,32 @@ welcome
     bottom: 0;
     top: 0;
     margin: auto;
-    
+
 }
+
 .waveWrapperInner {
     position: absolute;
     width: 100%;
     overflow: hidden;
     height: 100%;
     bottom: -1px;
-  
+
 }
+
 .bgTop {
     z-index: 6;
     opacity: 0.5;
 }
+
 .bgMiddle {
     z-index: 5;
     opacity: 0.75;
 }
+
 .bgBottom {
     z-index: 4;
 }
+
 .wave {
     position: absolute;
     left: 0;
@@ -300,24 +351,30 @@ welcome
     background-position: 0 bottom;
     transform-origin: center bottom;
 }
+
 .waveTop {
     background-size: 50% 100px;
 }
+
 .waveAnimation .waveTop {
-  animation: move-wave 3s;
-   -webkit-animation: move-wave 3s;
-   -webkit-animation-delay: 1s;
-   animation-delay: 1s;
+    animation: move-wave 3s;
+    -webkit-animation: move-wave 3s;
+    -webkit-animation-delay: 1s;
+    animation-delay: 1s;
 }
+
 .waveMiddle {
     background-size: 50% 120px;
 }
+
 .waveAnimation .waveMiddle {
     animation: move_wave 10s linear infinite;
 }
+
 .waveBottom {
     background-size: 50% 100px;
 }
+
 .waveAnimation .waveBottom {
     animation: move_wave 15s linear infinite;
 }

@@ -90,13 +90,13 @@ body {
 
     &.light {
         .section-title {
-            color: $headingLight;
+            color: $gradientDark;
         }
     }
 
     .section-title {
         @include font($normal, 28px);
-        color: $headingDark;
+        color: $gradientDark;
         letter-spacing: 1.75px;
         height: 45px;
         margin-bottom: 30px;
@@ -420,6 +420,9 @@ blockquote {
     margin-bottom: 30px;
 }
 
+.gradlight{
+    color: $gradientLight;
+}
 
 @media (max-width : 991px) {
 
