@@ -28,7 +28,7 @@
     "webpack-dev-server": "^2.11.5"
   },
   "dependencies": {
-    "lodash": "^4.17.11",
+    "lodash": "^4.17.19",
     "material-components-web": "^1.1.0",
     "typed.js": "^2.0.10"
   }
